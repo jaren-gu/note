@@ -54,6 +54,9 @@ make && make install
 	#下载
 	wget https://github.com/arnaud-lb/php-rdkafka/archive/master.zip
 	
+	#修改包名
+	mv master.zip  php-rdkafka-master.zip
+	
 	#解压并进入安装文件夹
 	unzip php-rdkafka-master.zip && cd php-rdkafka-master   
 	
@@ -105,7 +108,8 @@ phpinfo();
   
 5、**如果出现如下错误**
 ```bash
-NOTICE: PHP message: PHP Warning: PHP Startup: Unable to load dynamic library '/usr/lib64/php/modules/kafka.so' - librdkafka.so.1: cannot open shared object file: No such file or directory in Unknown on line 0
+NOTICE: PHP message: PHP Warning: PHP Startup: Unable to load dynamic library '/usr/lib64/php/modules/kafka.so'
+- librdkafka.so.1: cannot open shared object file: No such file or directory in Unknown on line 0
 ```
 可以执行以下代码解决（[参考链接](https://github.com/salebab/phpkafka/issues/6)）
 
