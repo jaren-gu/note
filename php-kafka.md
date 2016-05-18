@@ -6,60 +6,78 @@
 
 ---
 
-1、**安装librdkafka**
+1、**安装 librdkafka**
  
 ```bash
-cd /usr/local/src #进入安装包存放目录
+#下载
+wget https://github.com/edenhill/librdkafka/archive/master.zip
 
-wget https://github.com/edenhill/librdkafka/archive/master.zip  #下载
+#修改包名
+mv master.zip librdkafka-master.zip
 
-mv master.zip librdkafka-master.zip  #修改包名
+#解压并进入安装文件夹
+unzip librdkafka-master.zip && cd librdkafka-master
 
-unzip librdkafka-master.zip  #解压
+#配置
+./configure
 
-cd librdkafka-master  #进入安装文件夹
-
-./configure   #配置
-
-make  #编译
-
-make install  #安装
+#编译安装
+make && make install
 ```
 
 ---
 
-2、**安装phpkafka**
+2、**安装 kafka 扩展**
 
-```bash
-cd /usr/local/src  #进入安装包存放目录
-
-wget https://github.com/EVODelavega/phpkafka/archive/master.zip  #下载
-
-mv master.zip phpkafka-master.zip  #修改包名
-
-unzip phpkafka-master.zip   #解压
-
-cd phpkafka-master   #进入安装文件夹
-
-/usr/local/php/bin/phpize  #加载php扩展模块
-
-./configure --enable-kafka --with-php-config=/usr/local/php/bin/php-config   #配置
-
-make  #编译
-
-make install  #安装
-```
+- EVODelavega / phpkafka
+	```bash
+	#下载
+	wget https://github.com/EVODelavega/phpkafka/archive/master.zip
+	
+	#修改包名
+	mv master.zip phpkafka-master.zip
+	
+	#解压并进入安装文件夹
+	unzip phpkafka-master.zip && cd phpkafka-master   
+	
+	#加载php扩展模块
+	/usr/local/php/bin/phpize
+	
+	#配置
+	./configure --enable-kafka --with-php-config=/usr/local/php/bin/php-config
+	
+	#编译安装
+	make && make install
+	```
+- arnaud-lb / php-rdkafka
+	```bash
+	#下载
+	wget https://github.com/arnaud-lb/php-rdkafka/archive/master.zip
+	
+	#解压并进入安装文件夹
+	unzip php-rdkafka-master.zip && cd php-rdkafka-master   
+	
+	#加载php扩展模块
+	/usr/local/php/bin/phpize
+	
+	#配置
+	./configure --with-php-config=/usr/local/php/bin/php-config
+	
+	#编译安装
+	make && make install
+	```
 
 ---
 
 3、**修改php配置文件**
 
+打开php配置文件，在最后一行添加下面的代码
 ```bash
-vi /usr/local/php/etc/php.ini  #打开php配置文件，在最后一行添加下面的代码
-
+#EVODelavega/phpkafka
 extension="kafka.so"
 
-:wq!  #保存退出
+#arnaud-lb/php-rdkafka
+extension=rdkafka.so
 ```
 
 ---
@@ -75,8 +93,13 @@ phpinfo();
 
 ?>
 ```
-上传到网站目录，查找kafka，如下图所示，说明安装成功！
-![php-kafka.png](/public/imgs/php-kafka.png "php-kafka.png")
+上传到网站目录，访问并查找kafka，如下图所示，说明安装成功！
+
+- EVODelavega/phpkafka
+![php-kafka.png](/public/imgs/php-kafka.png "php-kafka_1.png")
+
+- arnaud-lb/php-rdkafka
+![php-kafka.png](/public/imgs/php-kafka.png "php-kafka_2.png")
   
   ---
   
