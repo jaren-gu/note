@@ -96,10 +96,10 @@ phpinfo();
 上传到网站目录，访问并查找kafka，如下图所示，说明安装成功！
 
 - EVODelavega/phpkafka
-![php-kafka.png](/public/imgs/php-kafka.png "php-kafka_1.png")
+![php-kafka.png](/public/imgs/php-kafka_1.png "php-kafka_1.png")
 
 - arnaud-lb/php-rdkafka
-![php-kafka.png](/public/imgs/php-kafka.png "php-kafka_2.png")
+![php-kafka.png](/public/imgs/php-kafka_2.png "php-kafka_2.png")
   
   ---
   
