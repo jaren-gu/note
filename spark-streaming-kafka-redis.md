@@ -15,7 +15,7 @@
 
 2.  引入依赖
 	
-	编辑 build.sbt 文件，在文件中追加如下代码
+	本例子使用了 [debasishg/scala-redis](https://github.com/debasishg/scala-redis) 作为 Scala 的 Redis 客户端，所以需要先引入 scala-redis 的依赖。	编辑 build.sbt 文件，在文件中追加如下代码。
 	```sbt
 	libraryDependencies ++= Seq(
 		"org.apache.spark" % "spark-streaming_2.10" % "1.6.1",
@@ -29,7 +29,7 @@
 	- 在 src/main/scala 目录下创建包 Stream
 	- 在 Stream 包下创建 Scala 类文件 Redis **并选择创建类型为 Object**
 
-	示例代码如下
+       示例代码如下
 	```scala
 	package Stream
 
@@ -87,7 +87,6 @@
 	    r.set(key,value)
 	  }
 	}
-
 	```
 
 4. 编辑代码
@@ -131,5 +130,3 @@ Spark 是一个分布式的系统，RDD 也是一个弹性数据集。这意味�
 解决方法就是把要调用的自定义方法封装在一个可被 serializable  的对象中，使之能被 Spark 正确 serializable 。
 
 其他解决方案请参考解决方案来源：[原文地址](http://stackoverflow.com/questions/22592811/task-not-serializable-java-io-notserializableexception-when-calling-function-ou)
-
----
