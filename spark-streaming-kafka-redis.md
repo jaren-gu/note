@@ -2,16 +2,14 @@
 
 本例子使用 Kafka 收集数据，Spark Streaming 分析统计，并把结果存储至 Redis 中去。
 
----
-
-环境
+##环境
 
 - 系统 ： centos 7
 - Spark 包版本： spark-1.6.1-hadoop-2.6.0
 - Scala 版本 scala 2.10.6
 - IDE ： IDEA
 
----
+## 步骤
 
 1. 创建 SBT 工程
 
@@ -118,12 +116,7 @@
 6. 向 Kafka 发送数据，查看结果
 
 
-
-
-
----
-
-问题
+##问题
 
 1. 在把分析结果保存到 Redis 中时可能发生如下错误
 
