@@ -53,12 +53,12 @@
 2. 安装php
 	- 更新源
     ```bash
-    rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+    sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
     ```
     
 	- 安装php5.5
 	```bash
-	yum install php55w php55w-fpm php55w-mysqlnd php55w-gd php55w-eaccelerator php55w-pdo php55w-mbstring php55w-mhash php55w-cli php55w-mcrypt php55w php55w-mysql php55w-imap php55w-ldap php55w-odbc php55w-pear php55w-xml php55w-xmlrpc php55w-snmp php55w-pear php55w-common php55w-devel curl openssl openssl-devel -y
+	sudo yum install php55w php55w-fpm php55w-mysqlnd php55w-gd php55w-eaccelerator php55w-pdo php55w-mbstring php55w-mhash php55w-cli php55w-mcrypt php55w-imap php55w-ldap php55w-odbc php55w-pear php55w-xml php55w-xmlrpc php55w-snmp php55w-pear php55w-common php55w-devel php55w-pecl-xdebug curl openssl openssl-devel -y
 
 	sudo systemctl enable php-fpm
 	```
@@ -89,22 +89,17 @@
 
 
 4. 配置xdebug
-	安装并配置好php环境后，安装xdebug
-	```bash
-	sudo pecl install xdebug
-	```
-	安装完成后，在php.ini中加入如下配置：
-
+	
+	- 在php.ini中加入如下配置：
 	```bash
 	;xdebug
 	[xdebug]
-	zend_extension=/usr/local/php/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so 
 	xdebug.remote_enable=1
 	xdebug.remote_connect_back=1
 	xdebug.remote_port=9000
 	```
 	
-3. 重启 nginx 和 php 进程即可
+	- 重启 nginx 和 php 进程即可
 	```bash
 	sudo systemctl restart php-fpm
 	sudo systemctl restart nginx
