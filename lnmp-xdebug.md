@@ -1,6 +1,11 @@
 
 #lnmp + xdebug 配置
 
+
+此笔记记录 CentOS 7 下安装 lnmp 环境，并配置xdebug。
+
+## 步骤
+
 1. 安装 nginx
 	- 更新源
 	```bash
