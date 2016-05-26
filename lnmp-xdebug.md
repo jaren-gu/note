@@ -74,7 +74,7 @@
 		编辑 `/etc/php.ini` 文件，修改 `;cgi.fix_pathinfo=1` 为 `cgi.fix_pathinfo=0`
 		
 		编辑 `/etc/php-fpm.d/www.conf` 文件
-		- 找到 `;listen = 127.0.0.1:9000` 修改为 `listen = /var/run/php-fpm/php-fpm.sock`
+		- 找到 `;listen = 127.0.0.1:9000` 修改为 `listen = /var/run/php-fpm/php5-fpm.sock`
 		- 找到 `;listen.mode = 0660` 修改为 `listen.mode = 0666`
 
 	- 启动 php-fpm 
