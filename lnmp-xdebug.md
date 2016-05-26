@@ -51,9 +51,10 @@
 		} 
 		```
 	- 启动 nginx
-    	```bsah
-    	sudo systemctl start nginx
-    	```
+		
+		```bash
+		sudo systemctl start nginx	
+		```
   
 2. 安装php
 	- 更新源
