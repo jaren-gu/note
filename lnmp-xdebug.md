@@ -8,16 +8,16 @@
 
 1. 安装 nginx
 	- 更新源
-	```bash
-	sudo wget http://repo.webtatic.com/yum/el7/x86_64/RPMS/epel-release-7-5.noarch.rpm && rpm -ivh epel-release-7-5.noarch.rpm
-	```
+    	```bash
+    	sudo wget http://repo.webtatic.com/yum/el7/x86_64/RPMS/epel-release-7-5.noarch.rpm && rpm -ivh epel-release-7-5.noarch.rpm
+    	```
 
 	- 安装 nginxs
-	```bash
-	sudo yum install nginx -y
-
-	sudo systemctl enable nginx.service
-	```
+    	```bash
+    	sudo yum install nginx -y
+    
+    	sudo systemctl enable nginx.service
+    	```
 
 	- 配置 nginx
 
@@ -51,22 +51,22 @@
 		} 
 		```
 	- 启动 nginx
-	```bsah
-	sudo systemctl start nginx
-	```
+    	```bsah
+    	sudo systemctl start nginx
+    	```
   
 2. 安装php
 	- 更新源
-    ```bash
-    sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-    ```
+        ```bash
+        sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+        ```
     
 	- 安装php5.5
-	```bash
-	sudo yum install php55w php55w-fpm php55w-mysqlnd php55w-gd php55w-eaccelerator php55w-pdo php55w-mbstring php55w-mhash php55w-cli php55w-mcrypt php55w-imap php55w-ldap php55w-odbc php55w-pear php55w-xml php55w-xmlrpc php55w-snmp php55w-pear php55w-common php55w-devel php55w-pecl-xdebug curl openssl openssl-devel -y
-
-	sudo systemctl enable php-fpm
-	```
+    	```bash
+    	sudo yum install php55w php55w-fpm php55w-mysqlnd php55w-gd php55w-eaccelerator php55w-pdo php55w-mbstring php55w-mhash php55w-cli php55w-mcrypt php55w-imap php55w-ldap php55w-odbc php55w-pear php55w-xml php55w-xmlrpc php55w-snmp php55w-pear php55w-common php55w-devel php55w-pecl-xdebug curl openssl openssl-devel -y
+    
+    	sudo systemctl enable php-fpm
+    	```
 
 	- 配置 php
 	
@@ -76,11 +76,10 @@
 		- 找到 `;listen = 127.0.0.1:9000` 修改为 `listen = /var/run/php-fpm/php-fpm.sock`
 		- 找到 `;listen.mode = 0660` 修改为 `listen.mode = 0666`
 
-
-	- 启动 php-fpm
-	```bsah
-	sudo systemctl start php-fpm
-	```
+	- 启动 php-fpm 
+        ```bsah
+        sudo systemctl start php-fpm
+        ```
 
 			
 3. 安装MariaDB
@@ -96,16 +95,16 @@
 4. 配置xdebug
 	
 	- 在php.ini中加入如下配置：
-	```bash
-	;xdebug
-	[xdebug]
-	xdebug.remote_enable=1
-	xdebug.remote_connect_back=1
-	xdebug.remote_port=9000
-	```
+    	```bash
+    	;xdebug
+    	[xdebug]
+    	xdebug.remote_enable=1
+    	xdebug.remote_connect_back=1
+    	xdebug.remote_port=9000
+    	```
 	
 	- 重启 nginx 和 php 进程即可
-	```bash
-	sudo systemctl restart php-fpm
-	sudo systemctl restart nginx
-	```
+    	```bash
+    	sudo systemctl restart php-fpm
+    	sudo systemctl restart nginx
+    	```
