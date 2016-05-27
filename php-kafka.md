@@ -120,3 +120,11 @@ echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib64/php/modules:/usr/local
 
 ldconfig
 ```
+
+6、依赖问题
+
+组件本身不依赖其他组件，但需要 c/c++ 编译环境，如果编译过程出现错误，可尝试安装编辑工具。
+
+```bash
+sudo yum install gcc gcc-c++ make
+```
