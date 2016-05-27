@@ -11,7 +11,7 @@
 1.  打开 .sbt 目录
 	- linux 用户
 	```bash
-	vim ~/.sbt/
+	cd ~/.sbt/
 	```
 	
 	- windows 用户
