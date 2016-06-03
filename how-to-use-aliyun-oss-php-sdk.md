@@ -1,6 +1,9 @@
 # 如何使用 aliyun-oss-php-sdk
 
-官方文档原文地址：https://github.com/aliyun/aliyun-oss-php-sdk
+官方文档：
+
+- [github](https://github.com/aliyun/aliyun-oss-php-sdk)
+- [帮助中心](https://help.aliyun.com/document_detail/32099.html?spm=5176.doc32099.6.368.bi6PTr)
 
 ### 使用步骤
  
