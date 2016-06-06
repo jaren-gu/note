@@ -17,7 +17,7 @@
 	
 		在入口文件内加入如下语句
 	```php
-	require_once './composer/autoload.php';
+	require_once './vendor/autoload.php';
 	```
 	
 	- laravel 5.1
